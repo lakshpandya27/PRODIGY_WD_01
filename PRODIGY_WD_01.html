@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        section {
+            margin-top: 80px;
+            padding: 50px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Style changes when hovering over a menu item */
+        nav a:hover {
+            color: #ff8c00;
+        }
+
+        /* Style changes when the page is scrolled */
+        body.scrolled nav {
+            background-color: #555;
+        }
+
+        body.scrolled section {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to our website!</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Learn more about our company.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Discover the services we offer.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us.</p>
+    </section>
+
+    <script>
+        // JavaScript for handling scrolling and updating styles
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("scroll", function () {
+                var nav = document.querySelector("nav");
+                nav.classList.toggle("scrolled", window.scrollY > 0);
+            });
+        });
+    </script>
+</body>
+</html>
